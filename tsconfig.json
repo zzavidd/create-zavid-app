@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es5",
+    "isolatedModules": false,
+    "module": "commonjs",
+    "noEmit": false,
+    "outDir": "./dist"
+  },
+  "include": ["**/src"],
+  "exclude": ["**/dist, **/node_modules, **/.out"]
+}
