@@ -1,15 +1,13 @@
 /**
- * @type {import('eslint').ESLint.Options}
- **/
-module.exports = {
-  extends: '@zzavidd/eslint-config',
+ * @type {import('eslint').Linter.Config}
+ */
+ const eslintConfig = {
+  extends: '@zzavidd/eslint-config/react-ts',
   root: true,
-  ignorePatterns: ['.eslintrc.js', '**/dist/**', '**/out/**'],
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ['**/tsconfig.json']
+    project: ['**/tsconfig.json'],
   },
-  settings: {
-    react: 'latest'
-  }
 };
+
+module.exports = eslintConfig;
