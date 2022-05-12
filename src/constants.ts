@@ -4,7 +4,7 @@ export const isProduction = process.env.NODE_ENV === 'production';
 
 export const CURRENT_WORKING_DIR = isProduction
   ? process.cwd()
-  : path.join(__dirname, `../.out`);
+  : path.join(__dirname, `../.out/app`);
 
 export const WEBPACK_DEPENDENCIES = ['react', 'react-dom', 'styled-components'];
 
@@ -42,6 +42,15 @@ export const STYLELINT_CONFIG_DEPENDENCIES = [
   '@zzavidd/stylelint-config',
   'stylelint',
   'stylelint-config-sass-guidelines',
+];
+
+export const WEBPACK_BASE_FILES = [
+  'src/app.tsx',
+  'src/index.tsx',
+  '.babelrc',
+  'index.html',
+  'tsconfig.json',
+  'webpack.config.js',
 ];
 
 export const NEXTJS_FILES_TO_DELETE = [

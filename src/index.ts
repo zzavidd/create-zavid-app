@@ -17,7 +17,6 @@ import BootstrapWebpackProject from './webpack';
       false,
     )
     .action(async (toolchain, options) => {
-      console.log(toolchain);
       if (toolchain === 'webpack') {
         await BootstrapWebpackProject();
       }
