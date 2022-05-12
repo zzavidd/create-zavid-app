@@ -1,48 +1,29 @@
-#!/usr/bin/env node
-import fs from 'fs';
-import path from 'path';
+import { Command } from 'commander';
 
-import { FilesToDelete, ZavidConfigDependencies } from './constants';
-import { deleteFile, run } from './utils';
-
-const isProduction = process.env.NODE_ENV === 'production';
-
-const APP_NAME = 'code';
-const OUTPUT_DIR = isProduction
-  ? process.cwd()
-  : path.join(__dirname, `../.out`);
-const OUTPUT_APP_DIR = `${OUTPUT_DIR}/${APP_NAME}`;
+import BootstrapWebpackProject from './webpack';
 
 (async () => {
-  ensureProjectDirectory();
-  await installDependencies();
-  deleteUnwantedFiles();
+  const program = new Command();
+  program
+    .command('bootstrap')
+    .description('Bootstraps a TypeScript React.')
+    .argument(
+      '[toolchain]',
+      'The toolchain to use. Either plain Webpack or Next.js.',
+    )
+    .option(
+      '-s, --with-sass',
+      'Generates files for all guests. Void if name is specified.',
+      false,
+    )
+    .action(async (toolchain, options) => {
+      console.log(toolchain);
+      if (toolchain === 'webpack') {
+        await BootstrapWebpackProject();
+      }
+    });
+
+  program.addHelpCommand(false);
+
+  await program.parseAsync();
 })();
-
-async function ensureProjectDirectory() {
-  if (fs.existsSync(OUTPUT_DIR) && !isProduction) {
-    deleteFile(OUTPUT_DIR);
-  }
-  fs.mkdirSync(OUTPUT_DIR);
-}
-
-async function installDependencies() {
-  await run('npx', [
-    'create-next-app@latest',
-    '--ts',
-    '--use-npm',
-    OUTPUT_APP_DIR
-  ]);
-  await run('npm', ['i', '-D', ...ZavidConfigDependencies], OUTPUT_APP_DIR);
-  await run('npm', ['i', 'sass'], OUTPUT_APP_DIR);
-}
-
-function deleteUnwantedFiles() {
-  FilesToDelete.forEach((filename) => {
-    try {
-      deleteFile(`${OUTPUT_APP_DIR}/${filename}`);
-    } catch (e: any) {
-      console.warn(e.toString());
-    }
-  });
-}

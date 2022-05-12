@@ -12,5 +12,6 @@
     "noEmit": false,
     "outDir": "./dist"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/config/src/**"]
 }

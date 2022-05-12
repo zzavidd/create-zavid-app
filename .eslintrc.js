@@ -1,13 +1,17 @@
 /**
  * @type {import('eslint').Linter.Config}
  */
- const eslintConfig = {
+module.exports = {
   extends: '@zzavidd/eslint-config/react-ts',
   root: true,
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ['**/tsconfig.json'],
+    project: './tsconfig.json',
   },
+  overrides: [
+    {
+      files: '**/config/**',
+      parserOptions: null
+    },
+  ],
 };
-
-module.exports = eslintConfig;
