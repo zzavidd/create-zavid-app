@@ -7,7 +7,6 @@ export const CURRENT_WORKING_DIR = isProduction
   : path.join(__dirname, `../.out/app`);
 
 export const WEBPACK_DEPENDENCIES = ['react', 'react-dom', 'styled-components'];
-
 export const WEBPACK_DEV_DEPENDENCIES = [
   '@babel/core',
   '@babel/preset-env',

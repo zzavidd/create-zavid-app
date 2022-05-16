@@ -11,7 +11,7 @@ export function ensureProjectDirectory(): void {
   if (fs.existsSync(CURRENT_WORKING_DIR) && !isProduction) {
     deleteFile(CURRENT_WORKING_DIR);
   }
-  fs.mkdirSync(CURRENT_WORKING_DIR);
+  fs.mkdirSync(CURRENT_WORKING_DIR, { recursive: true });
 }
 
 export function run(

@@ -1,12 +1,12 @@
 {
   "name": "create-zavid-app",
   "main": "./dist/index.js",
-  "prettier": "@zzavidd/prettier-config",
   "license": "MIT",
+  "prettier": "@zzavidd/prettier-config",
+  "bin": "./dist/index.js",
   "scripts": {
-    "prebuild": "rm -rf dist",
     "build": "tsc",
-    "clean": "rm -rf code",
+    "clean": "rm -rf .out",
     "dev": "ts-node src",
     "prod": "NODE_ENV=production ts-node src"
   },

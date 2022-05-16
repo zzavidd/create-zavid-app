@@ -1,10 +1,8 @@
-import path from 'path';
 import {
-  CURRENT_WORKING_DIR,
   BASE_CONFIG_DEPENDENCIES,
+  CURRENT_WORKING_DIR,
   WEBPACK_DEPENDENCIES,
   WEBPACK_DEV_DEPENDENCIES,
-  WEBPACK_BASE_FILES,
 } from '../constants';
 import * as Utils from '../utils';
 

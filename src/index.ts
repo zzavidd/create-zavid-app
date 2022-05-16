@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Command } from 'commander';
 
 import BootstrapWebpackProject from './webpack';
@@ -5,7 +6,6 @@ import BootstrapWebpackProject from './webpack';
 (async () => {
   const program = new Command();
   program
-    .command('bootstrap')
     .description('Bootstraps a TypeScript React.')
     .argument(
       '[toolchain]',

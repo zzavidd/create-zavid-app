@@ -11,7 +11,7 @@ module.exports = {
   overrides: [
     {
       files: '**/config/**',
-      parserOptions: null
+      parserOptions: undefined
     },
   ],
 };

@@ -1,16 +1,14 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": ["esnext"],
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es5",
     "isolatedModules": false,
     "module": "commonjs",
+    "moduleResolution": "node",
     "noEmit": false,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es6",
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "**/config/src/**"]
