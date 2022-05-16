@@ -1,6 +1,6 @@
 import path from 'path';
 
-export const isProduction = process.argv.includes('--development');
+export const isProduction = process.env.MODE !== 'dev';
 export const CURRENT_WORKING_DIR = isProduction
   ? process.cwd()
   : path.join(__dirname, `../.out/app`);

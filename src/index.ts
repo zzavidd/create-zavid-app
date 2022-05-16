@@ -6,7 +6,7 @@ import BootstrapWebpackProject from './webpack';
 
 (async () => {
   if (!isProduction) {
-    console.info('Running in development.');
+    console.info('Running in development...');
   }
 
   const program = new Command();

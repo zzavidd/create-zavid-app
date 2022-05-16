@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc && cp -r src/webpack/config dist/webpack",
     "clean": "rm -rf .out",
-    "dev": "ts-node src --development",
+    "dev": "MODE=dev ts-node src",
     "publish": "np"
   },
   "dependencies": {
