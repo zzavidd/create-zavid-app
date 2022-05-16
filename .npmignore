@@ -1,4 +1,9 @@
-.eslintrc.js
+.DS_Store
+node_modules
 .out
+.next
+
+.eslintrc.js
 src
+lerna.json
 tsconfig.json
