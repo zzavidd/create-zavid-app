@@ -11,7 +11,7 @@
     "build": "tsc && cp -r src/webpack/config dist/webpack",
     "clean": "rm -rf .out",
     "dev": "MODE=dev ts-node src",
-    "publish": "np"
+    "publish": "np --any-branch --no-release-draft"
   },
   "dependencies": {
     "commander": "^9.2.0"
