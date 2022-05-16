@@ -4,8 +4,9 @@
   "main": "./dist/index.js",
   "license": "MIT",
   "author": "Zavid Egbue",
-  "prettier": "@zzavidd/prettier-config",
   "bin": "./dist/index.js",
+  "packageManager": "yarn@3.2.1",
+  "prettier": "@zzavidd/prettier-config",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf .out",

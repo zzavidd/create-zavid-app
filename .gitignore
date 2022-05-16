@@ -3,3 +3,6 @@
 **/dist
 **/.out
 **/.next
+
+**/.yarn/*
+!**/.yarn/releases
