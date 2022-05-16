@@ -8,10 +8,9 @@
   "packageManager": "yarn@3.2.1",
   "prettier": "@zzavidd/prettier-config",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp -r src/webpack/config dist/webpack",
     "clean": "rm -rf .out",
-    "dev": "ts-node src",
-    "prod": "NODE_ENV=production ts-node src",
+    "dev": "ts-node src --development",
     "publish": "np"
   },
   "dependencies": {

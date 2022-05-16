@@ -1,7 +1,6 @@
 import path from 'path';
 
-export const isProduction = process.env.NODE_ENV === 'production';
-
+export const isProduction = process.argv.includes('--development');
 export const CURRENT_WORKING_DIR = isProduction
   ? process.cwd()
   : path.join(__dirname, `../.out/app`);
@@ -51,6 +50,11 @@ export const WEBPACK_BASE_FILES = [
   'tsconfig.json',
   'webpack.config.js',
 ];
+
+export const WEBPACK_FILES_TO_DELETE = [
+  'README.md',
+  'yarn.lock'
+]
 
 export const NEXTJS_FILES_TO_DELETE = [
   'README.md',

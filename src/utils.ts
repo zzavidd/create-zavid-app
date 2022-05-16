@@ -22,7 +22,7 @@ export function run(
   return new Promise((resolve) => {
     const child = spawn(command, args, { cwd });
 
-    // child.stdout.pipe(process.stdout);
+    child.stdout.pipe(process.stdout);
     child.stderr.pipe(process.stderr);
     process.stdin.pipe(child.stdin);
 

@@ -1,9 +1,14 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
+import { isProduction } from './constants';
 
 import BootstrapWebpackProject from './webpack';
 
 (async () => {
+  if (!isProduction) {
+    console.info('Running in development.');
+  }
+
   const program = new Command();
   program
     .description('Bootstraps a TypeScript React.')
