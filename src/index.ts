@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import { isProduction } from './constants';
 
+import { isProduction } from './constants';
 import BootstrapWebpackProject from './webpack';
 
 (async () => {
@@ -21,7 +21,7 @@ import BootstrapWebpackProject from './webpack';
       'Generates files for all guests. Void if name is specified.',
       false,
     )
-    .action(async (toolchain, options) => {
+    .action(async (toolchain) => {
       if (toolchain === 'webpack') {
         await BootstrapWebpackProject();
       }

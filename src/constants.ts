@@ -1,9 +1,11 @@
 import path from 'path';
 
 export const isProduction = process.env.MODE !== 'dev';
+
+export const CZA_ROOT = path.join(__dirname, '..');
 export const CURRENT_WORKING_DIR = isProduction
   ? process.cwd()
-  : path.join(__dirname, `../.out/app`);
+  : `${CZA_ROOT}/.out/app`;
 
 export const WEBPACK_DEPENDENCIES = ['react', 'react-dom', 'styled-components'];
 export const WEBPACK_DEV_DEPENDENCIES = [
@@ -53,10 +55,7 @@ export const WEBPACK_BASE_FILES = [
   'webpack.config.js',
 ];
 
-export const WEBPACK_FILES_TO_DELETE = [
-  'README.md',
-  'yarn.lock'
-]
+export const WEBPACK_FILES_TO_DELETE = ['README.md', 'yarn.lock'];
 
 export const NEXTJS_FILES_TO_DELETE = [
   'README.md',

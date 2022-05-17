@@ -8,7 +8,7 @@
   "packageManager": "yarn@3.2.1",
   "prettier": "@zzavidd/prettier-config",
   "scripts": {
-    "build": "tsc && cp -r src/webpack/config dist/webpack",
+    "build": "tsc",
     "clean": "rm -rf .out",
     "dev": "MODE=dev ts-node src",
     "publish": "lerna publish --force-publish --yes"

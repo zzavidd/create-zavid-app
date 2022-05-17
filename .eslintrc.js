@@ -10,7 +10,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: '**/config/**',
+      files: 'bp/**',
       parserOptions: undefined
     },
   ],

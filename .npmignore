@@ -1,9 +1,11 @@
+node_modules/
+.out/
+.next/
+.yarn/
 .DS_Store
-node_modules
-.out
-.next
+.yarnrc.yml
 
 .eslintrc.js
-src
+src/
 lerna.json
 tsconfig.json
